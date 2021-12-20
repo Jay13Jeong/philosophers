@@ -38,7 +38,6 @@ typedef struct s_config
 	sem_t				*forks;
 	sem_t				*print_section;
 	struct timeval		val;
-	int					pipe[2];
 }				t_config;
 
 void		clean_exit(char *str, t_config *c, int pid_cnt);
@@ -46,6 +45,5 @@ void		chk_and_init(t_config *c, int argc, char **argv);
 void		print_lock(t_config *c, int id, char *str);
 long long	get_time(t_config *c);
 int			ft_atoi(const char *str);
-void		dummy(int sig);
 
 #endif

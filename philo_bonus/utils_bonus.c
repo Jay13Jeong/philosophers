@@ -4,15 +4,11 @@ void	init_meta(t_config *c)
 {
 	int	i;
 
-	sem_unlink("/sig_section");
 	sem_unlink("/pair_forks");
 	sem_unlink("/print_section");
-	c->sig_section = sem_open("/sig_section", O_CREAT, S_IRWXU, 1);
-	if (c->sig_section == SEM_FAILED)
-		clean_exit("Signal Semaphore Init Error\n", c, -1);
-	c->forks = sem_open("/pair_forks", O_CREAT, S_IRWXU, c->p_cnt / 2);
+	c->forks = sem_open("/pair_forks", O_CREAT, S_IRWXU, c->p_cnt);
 	if (c->forks == SEM_FAILED)
-		clean_exit("Fork Semaphore Init Error\n", c, 0);
+		clean_exit("Fork Semaphore Init Error\n", c, -1);
 	c->print_section = sem_open("/print_section", O_CREAT, S_IRWXU, 1);
 	if (c->print_section == SEM_FAILED)
 		clean_exit("Print Semaphore Init Error\n", c, 0);
@@ -58,6 +54,11 @@ void	print_lock(t_config *c, int id, char *str)
 	long long	event_time;
 
 	sem_wait(c->print_section);
+	if (getppid() == 1)
+	{
+		sem_post(c->print_section);
+		exit(0);
+	}
 	event_time = get_time(c) - c->start_time;
 	printf("%lli %i %s\n", event_time, id + 1, str);
 	sem_post(c->print_section);

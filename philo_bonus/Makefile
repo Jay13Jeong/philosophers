@@ -1,5 +1,5 @@
 NAME	= philo_bonus
-SRCS	= main.c utils_bonus.c utils2_bonus.c
+SRCS	= main_bonus.c utils_bonus.c
 OBJS	= $(SRCS:.c=.o)
 HEADER	= philosophers_bonus.h
 CC		= gcc

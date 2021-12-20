@@ -57,7 +57,7 @@ void	*philo_thread(void *p_void)
 		return (NULL);
 	c = p->config;
 	if (p->id % 2)
-		usleep(500);
+		usleep(15000);
 	while ((c->eat_limit) == -1 || (p->eat) < (c->eat_limit))
 	{
 		eat_spaghetti(p);
