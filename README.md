@@ -8,7 +8,7 @@ about mutex, semaphore, thread, process.
   <li>Enter the folder where you did clone in the terminal.</li>
   <li>The "philo" folder is a multi-threaded environment, and the "philo_bonus" folder is a multi-process environment. "cd" to the selected folder.</li>
   <li>and enter the "make" command.</li>
-  <li>Next, command the command "./philo 4 410 200 200" or "./philo_bonus 4 410 200 200" to match the folder name.</li>
+  <li>Next, enter the command "./philo 4 410 200 200" or "./philo_bonus 4 410 200 200" to match the folder name.</li>
 </ol>
   
 <br>
