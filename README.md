@@ -13,4 +13,7 @@ about mutex, semaphore, thread, process.
   
 <br>
 Please refer to the following blog for more information.<br>
-https://velog.io/@jay13jeong/%EC%B2%A0%ED%95%99%EC%9E%90-thread-process
+https://velog.io/@jay13jeong/%EC%B2%A0%ED%95%99%EC%9E%90-thread-process<br>
+  
+<br>
+<img width="auto" alt="17" src="https://user-images.githubusercontent.com/63899204/160731549-4ce315fa-624f-40ea-8aee-e1f772a27efa.png">
